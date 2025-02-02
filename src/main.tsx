@@ -1,9 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { IntlProvider } from 'react-intl'
 import App from './App.tsx'
-import enLocaleMessages from './assets/locales/en.json'
+import { I18NProvider } from './I18NProvider.tsx'
 
 function getRootElement(id: string): HTMLElement {
   const element = document.getElementById(id)
@@ -17,8 +16,8 @@ function getRootElement(id: string): HTMLElement {
 
 createRoot(getRootElement('root')).render(
   <StrictMode>
-    <IntlProvider locale="en" messages={enLocaleMessages}>
+    <I18NProvider>
       <App />
-    </IntlProvider>
+    </I18NProvider>
   </StrictMode>,
 )
