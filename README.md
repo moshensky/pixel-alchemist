@@ -1,4 +1,4 @@
-# Pixel Alchemist
+# ![logo](./public/favicon-32x32.png) Pixel Alchemist
 
 [![CI](https://github.com/moshensky/pixel-alchemist/actions/workflows/ci.yml/badge.svg)](https://github.com/moshensky/pixel-alchemist/actions/workflows/ci.yml)
 

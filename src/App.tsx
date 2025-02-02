@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FormattedMessage } from 'react-intl'
-import viteLogo from '/vite.svg'
+import viteLogo from '/favicon-32x32.png'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import { message } from './App.messages'
