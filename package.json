@@ -12,16 +12,20 @@
     "test": "vitest",
     "tsc": "tsc --noEmit --pretty",
     "tsc:watch": "npm run tsc -- --watch",
+    "i18n:extract": "formatjs extract 'src/**/*.ts*' --ignore='**/*.d.ts' --out-file lang/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]' --format simple",
+    "i18n:compile": "formatjs compile-folder --format simple --ast lang src/assets/locales",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-intl": "^7.1.5"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@chromatic-com/storybook": "^3.2.4",
+    "@formatjs/cli": "^6.5.1",
     "@storybook/addon-essentials": "^8.5.3",
     "@storybook/addon-interactions": "^8.5.3",
     "@storybook/addon-onboarding": "^8.5.3",
