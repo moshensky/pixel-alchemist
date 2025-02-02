@@ -1,6 +1,6 @@
-# pixel-alchemist
+# Pixel Alchemist
 
-[![CI](https://github.com/{username}/pixel-alchemist/actions/workflows/ci.yml/badge.svg)](https://github.com/{username}/pixel-alchemist/actions/workflows/ci.yml)
+[![CI](https://github.com/moshensky/pixel-alchemist/actions/workflows/ci.yml/badge.svg)](https://github.com/moshensky/pixel-alchemist/actions/workflows/ci.yml)
 
 This is a content creation tool that can edit selected images and download them
 
