@@ -1,6 +1,6 @@
-# pixel-alchemist
+# Pixel Alchemist
 
-[![CI](https://github.com/{username}/pixel-alchemist/actions/workflows/ci.yml/badge.svg)](https://github.com/{username}/pixel-alchemist/actions/workflows/ci.yml)
+[![CI](https://github.com/moshensky/pixel-alchemist/actions/workflows/ci.yml/badge.svg)](https://github.com/moshensky/pixel-alchemist/actions/workflows/ci.yml)
 
 This is a content creation tool that can edit selected images and download them
 
@@ -15,3 +15,9 @@ Run bellow script with appropriate version and port:
 ```sh
 ./ops/deploy/deploy.sh --set-version vX.X.X --port X
 ```
+
+## Potential enchansments
+
+- Automate message extractions for translation services
+- Automate translated messages compilations
+- Implement ability to switch languages
