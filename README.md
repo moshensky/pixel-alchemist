@@ -15,3 +15,9 @@ Run bellow script with appropriate version and port:
 ```sh
 ./ops/deploy/deploy.sh --set-version vX.X.X --port X
 ```
+
+## Potential enchansments
+
+- Automate message extractions for translation services
+- Automate translated messages compilations
+- Implement ability to switch languages
