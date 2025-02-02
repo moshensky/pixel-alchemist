@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { FormattedMessage } from 'react-intl'
-import viteLogo from '/favicon-32x32.png'
-import reactLogo from './assets/react.svg'
+import logo from '/favicon-32x32.png'
 import './App.css'
 import { message } from './App.messages'
 
@@ -10,26 +9,20 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button type="button" onClick={() => setCount((count) => count + 1)}>
+      <h1 className="text-3xl font-bold flex">
+        <img src={logo} alt="Pixel alchemist logo" />
+        Pixel Alchemist
+      </h1>
+
+      <div className="mt-3">
+        <button
+          className="inline-flex items-center px-2 py-1 text-sm font-medium h-8 text-center transition rounded ripple focus:outline-none border disabled:opacity-50 border-blue-500 text-white bg-blue-500 shadow hover:shadow-lg hover:bg-blue-600"
+          type="button"
+          onClick={() => setCount((count) => count + 1)}
+        >
           <FormattedMessage {...message.countIs} /> {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
