@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { FormattedMessage } from 'react-intl'
 import viteLogo from '/vite.svg'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { message } from './App.messages'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,7 +21,7 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <button type="button" onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          <FormattedMessage {...message.countIs} /> {count}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
