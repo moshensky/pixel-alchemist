@@ -123,19 +123,3 @@ For: https://picsum.photos/v2/list?page=2&limit=100
 For: https://picsum.photos/v2/list?page=1&limit=100
 <https://picsum.photos/v2/list?page=2&limit=100>; rel="next"
 ```
-
-
-### MISC
-
-Generated palette from logo:
-
-```txt
-#020927 - dark background
-#F8F8F2 - light
-#785892 - purple accent
-#E06A48 - warning redish/orange
-#543A4C - ?
-#2B1E32 - lighter dark
-#A098A0 - greyish
-#E8CF5E - accent pastel yellow
-```

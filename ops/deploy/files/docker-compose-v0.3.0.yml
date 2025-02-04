@@ -1,0 +1,17 @@
+services:
+  web:
+    image: moshensky/lw:pixel-alchemist-v0.3.0
+    environment:
+      VIRTUAL_HOST: pixel-alchemist.moshensky.com
+      LETSENCRYPT_HOST: pixel-alchemist.moshensky.com
+      LETSENCRYPT_EMAIL: nikita@moshensky.com
+    expose:
+      - "80"
+    networks:
+      - frontend
+    restart: always
+
+networks:
+  frontend:
+    external: true
+    name: nginx-proxy
