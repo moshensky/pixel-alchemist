@@ -65,16 +65,13 @@ export function createUrlSearchParams(
   const params = new URLSearchParams()
   const state = { ...currentState, ...newState }
 
-  // Always include dimensions
   params.set('width', state.width.toString())
   params.set('height', state.height.toString())
 
-  // Only include blur if it's greater than 0
   if (state.blur > 0) {
     params.set('blur', state.blur.toString())
   }
 
-  // Only include grayscale if it's true
   if (state.grayscale) {
     params.set('grayscale', 'true')
   }

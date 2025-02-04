@@ -29,10 +29,7 @@ describe('updateDimensions', () => {
           'width',
           false,
         ),
-      ).toEqual({
-        width: 900,
-        height: 600,
-      })
+      ).toEqual({ width: 900, height: 600 })
     })
 
     it('updates height while keeping width unchanged', () => {
@@ -45,10 +42,7 @@ describe('updateDimensions', () => {
           'height',
           false,
         ),
-      ).toEqual({
-        width: 800,
-        height: 700,
-      })
+      ).toEqual({ width: 800, height: 700 })
     })
 
     describe('respects boundaries', () => {
@@ -62,10 +56,7 @@ describe('updateDimensions', () => {
             'width',
             false,
           ),
-        ).toEqual({
-          width: 1000, // maxWidth
-          height: 600,
-        })
+        ).toEqual({ width: 1000, height: 600 })
       })
 
       it('clamps width to minimum', () => {
@@ -78,10 +69,7 @@ describe('updateDimensions', () => {
             'width',
             false,
           ),
-        ).toEqual({
-          width: 1, // minWidth
-          height: 600,
-        })
+        ).toEqual({ width: 1, height: 600 })
       })
 
       it('clamps height to maximum', () => {
@@ -94,10 +82,7 @@ describe('updateDimensions', () => {
             'height',
             false,
           ),
-        ).toEqual({
-          width: 800,
-          height: 800, // maxHeight
-        })
+        ).toEqual({ width: 800, height: 800 })
       })
 
       it('clamps height to minimum', () => {
@@ -110,10 +95,7 @@ describe('updateDimensions', () => {
             'height',
             false,
           ),
-        ).toEqual({
-          width: 800,
-          height: 1, // minHeight
-        })
+        ).toEqual({ width: 800, height: 1 })
       })
     })
   })
@@ -130,10 +112,7 @@ describe('updateDimensions', () => {
             'width',
             true,
           ),
-        ).toEqual({
-          width: 900,
-          height: 675,
-        })
+        ).toEqual({ width: 900, height: 675 })
       })
 
       it('maintains aspect ratio when decreasing width', () => {
@@ -146,14 +125,10 @@ describe('updateDimensions', () => {
             'width',
             true,
           ),
-        ).toEqual({
-          width: 200,
-          height: 150,
-        })
+        ).toEqual({ width: 200, height: 150 })
       })
 
       it('respects max height constraint', () => {
-        // Try to set width that would make height exceed maxHeight
         expect(
           updateDimensions(
             currentDimensions,
@@ -163,12 +138,7 @@ describe('updateDimensions', () => {
             'width',
             true,
           ),
-        ).toEqual({
-          // width adjusted down to maintain aspect ratio with maxHeight
-          width: 933,
-          // maxHeight
-          height: 700,
-        })
+        ).toEqual({ width: 933, height: 700 })
       })
 
       it('respects min height constraint', () => {
@@ -181,10 +151,7 @@ describe('updateDimensions', () => {
             'width',
             true,
           ),
-        ).toEqual({
-          width: 1,
-          height: 1,
-        })
+        ).toEqual({ width: 1, height: 1 })
       })
     })
 
@@ -199,10 +166,7 @@ describe('updateDimensions', () => {
             'height',
             true,
           ),
-        ).toEqual({
-          width: 933,
-          height: 700,
-        })
+        ).toEqual({ width: 933, height: 700 })
       })
 
       it('maintains aspect ratio when decreasing height', () => {
@@ -215,10 +179,7 @@ describe('updateDimensions', () => {
             'height',
             true,
           ),
-        ).toEqual({
-          width: 200,
-          height: 150,
-        })
+        ).toEqual({ width: 200, height: 150 })
       })
 
       it('respects max width constraint', () => {
@@ -231,10 +192,7 @@ describe('updateDimensions', () => {
             'height',
             true,
           ),
-        ).toEqual({
-          width: 900, // maxWidth
-          height: 675, // height adjusted to maintain aspect ratio
-        })
+        ).toEqual({ width: 900, height: 675 })
       })
 
       it('respects min width constraint', () => {
@@ -247,10 +205,7 @@ describe('updateDimensions', () => {
             'height',
             true,
           ),
-        ).toEqual({
-          width: 1,
-          height: 1,
-        })
+        ).toEqual({ width: 1, height: 1 })
       })
     })
   })
