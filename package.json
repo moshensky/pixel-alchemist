@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
+    "start": "vite --host",
     "start:preview": "vite preview",
     "build": "tsc -b && vite build",
     "lint": "npx @biomejs/biome check",
     "lint:fix": "npm run lint -- --write",
     "test": "vitest",
-    "tsc": "tsc --noEmit --pretty",
+    "tsc": "tsc -b --noEmit --pretty",
     "tsc:watch": "npm run tsc -- --watch",
     "i18n:extract": "formatjs extract 'src/**/*.ts*' --ignore='**/*.d.ts' --out-file lang/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]' --format simple",
     "i18n:compile": "formatjs compile-folder --format simple --ast lang src/assets/locales",
@@ -18,9 +18,16 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@reduxjs/toolkit": "^2.5.1",
+    "clsx": "^2.1.1",
+    "fp-ts": "^2.16.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-intl": "^7.1.5"
+    "react-intl": "^7.1.5",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.1.5",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
@@ -36,6 +43,7 @@
     "@tailwindcss/vite": "^4.0.3",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react-swc": "^3.5.0",
