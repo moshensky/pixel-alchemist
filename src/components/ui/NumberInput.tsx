@@ -17,17 +17,22 @@ export function NumberInput({
   onChange,
 }: Props) {
   const [inputValue, setInputValue] = useState(`${value}`)
+  const [isDirty, setIsDirty] = useState(false)
 
   useEffect(() => {
-    setInputValue(`${value}`)
-  }, [value])
+    if (!isDirty) {
+      setInputValue(`${value}`)
+    }
+  }, [value, isDirty])
 
   const handleChange = (ev: ChangeEvent<HTMLInputElement>) => {
     setInputValue(ev.target.value)
+    setIsDirty(true)
   }
 
   const handleBlur = () => {
     onChange(inputValue)
+    setIsDirty(false)
   }
 
   return (
