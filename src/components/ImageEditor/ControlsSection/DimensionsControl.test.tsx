@@ -192,22 +192,16 @@ describe('DimensionsControl', () => {
       await userEvent.type(widthInput, 'abc')
       await userEvent.tab()
 
-      expect(onChange).toHaveBeenCalledWith({
-        width: 1,
-        height: 600,
-      })
+      expect(onChange).toBeCalledTimes(0)
     })
 
-    it('sets empty input to 1', async () => {
+    it('ignores empty input', async () => {
       const { widthInput, onChange } = setup()
 
       await userEvent.clear(widthInput)
       await userEvent.tab()
 
-      expect(onChange).toHaveBeenCalledWith({
-        width: 1,
-        height: 600,
-      })
+      expect(onChange).toBeCalledTimes(0)
     })
   })
 })
