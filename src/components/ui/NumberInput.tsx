@@ -17,6 +17,7 @@ export function NumberInput({
   onChange,
 }: Props) {
   const [inputValue, setInputValue] = useState(`${value}`)
+  const [keyPressed, setKeyPressed] = useState(false)
   const [isDirty, setIsDirty] = useState(false)
 
   useEffect(() => {
@@ -26,13 +27,27 @@ export function NumberInput({
   }, [value, isDirty])
 
   const handleChange = (ev: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(ev.target.value)
+    const newValue = ev.target.value
+    setInputValue(newValue)
     setIsDirty(true)
+
+    // The change is triggered most probably by the spinner buttons
+    // when diff equals to step and no key was pressed
+    const diff = Math.abs(ev.target.valueAsNumber - Number(inputValue))
+    if (diff === step && keyPressed === false) {
+      onChange(newValue)
+    }
+
+    setKeyPressed(false)
   }
 
   const handleBlur = () => {
     onChange(inputValue)
     setIsDirty(false)
+  }
+
+  const handleKeyDown = () => {
+    setKeyPressed(true)
   }
 
   return (
@@ -41,6 +56,7 @@ export function NumberInput({
       <input
         type="number"
         value={inputValue}
+        onKeyDown={handleKeyDown}
         onChange={handleChange}
         onBlur={handleBlur}
         step={step}
