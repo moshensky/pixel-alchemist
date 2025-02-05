@@ -17,23 +17,19 @@ const dimensionsSchema = z.object({
 type Props = {
   initialState: ImageEditorState
   maxDimensions?: Dimensions
-  // Added for testing purposes
-  debounceMilis?: number
   onChange: (state: ImageEditorState) => void
 }
 
 export function EditorControls({
   initialState,
   maxDimensions,
-  debounceMilis,
   onChange,
 }: Props) {
   const [error, setError] = useState<string>()
   // Because of debounce we control a copy of the state
   const [localState, setLocalState] = useState(initialState)
-  const debouncedOnChange = useDebounce(onChange, debounceMilis ?? DEBOUNCE_MS)
+  const debouncedOnChange = useDebounce(onChange, DEBOUNCE_MS)
 
-  // Update local state when initial state changes (e.g., from URL updates)
   useEffect(() => {
     setLocalState(initialState)
   }, [initialState])

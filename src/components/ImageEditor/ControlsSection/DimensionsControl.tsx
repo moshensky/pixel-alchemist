@@ -26,7 +26,7 @@ export function DimensionsControl({
   const handleDimensionChange =
     (dimension: 'width' | 'height') => (value: string) => {
       const newValue = Number(value)
-      if (Number.isNaN(newValue)) {
+      if (value === '' || Number.isNaN(newValue)) {
         return
       }
 

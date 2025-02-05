@@ -24,6 +24,7 @@
     "fp-ts": "^2.16.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-error-boundary": "^5.0.0",
     "react-intl": "^7.1.5",
     "react-redux": "^9.2.0",
     "react-router": "^7.1.5",
